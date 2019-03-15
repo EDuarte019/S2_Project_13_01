@@ -33,8 +33,21 @@
       within textStr
 
 */
+// event handler that will run the init function
+window.onload = init;
+// The init function to define event listeners.
+function init() {
+      var stars = document.querySelectorAll("span#stars");
+      for (var i = 0; i < stars.length; i++) {
+            stars[i].style.cursor = "pointer";
+            document.addEventListener("mouseenter", lightStars);
+      }
+      document.getElementById("comment").document.addEventListener("keyup", updateCount);
+}
 
-
+function lightStars(e) {
+      var starNumber = event.target.alt;
+}
 
 
 
