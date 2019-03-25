@@ -38,13 +38,14 @@ window.onload = init;
 // The init function to define event listeners.
 function init() {
       var stars = document.querySelectorAll("span#stars img");
+      //for loop states is cursor is a pointer and adding an event listener with the mouseenter event. 
       for (var i = 0; i < stars.length; i++) {
             stars[i].style.cursor = "pointer";
             stars[i].addEventListener("mouseenter", lightStars);
       }
       document.getElementById("comment").addEventListener("keyup", updateCount);
 }
-
+// in the lightStars function, the stars are lit up and the for loops are there to put in the images needed for the stars, the array has src to specify. The function also turned the event off when not on it by the events being used.
 function lightStars(e) {
       var starNumber = e.target.alt;
       var stars = document.querySelectorAll("span#stars img");
@@ -65,7 +66,7 @@ function lightStars(e) {
 
             });
 }
-
+// The turnOffStars function has an object collection and a for loop that will place an image when conditions are met.
 function turnOffStars(e) {
       var stars = document.querySelectorAll("span#stars img");
       for (var i = 0; i < stars; i++) {
@@ -73,7 +74,7 @@ function turnOffStars(e) {
       }
       document.getElementById("rating").value = "";
 }
-// Declared the commenttext by getting the element by the id of comment. The charcount has parameters 
+// Declared the commenttext by getting the element by the id of comment. The charcount has parameters of commentText. The loop states that when there are more than 1000 words, it is red. If not, if goes back to white.
 function updateCount() {
       var commentText = document.getElementById("comment").value;
       var charCount = countCharacters(commentText);
